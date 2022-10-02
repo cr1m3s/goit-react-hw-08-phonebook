@@ -1,9 +1,9 @@
 import { useSelector } from 'react-redux';
 
-import style from './ContactList.module.css';
-import { Loader } from 'components/Loader/Loader';
+import style from '../../components/ContactList/ContactList.module.css';
+import { Loader } from '../../components/Loader/Loader.jsx';
 import { filterSlice, contactsSlice } from 'redux/contacts';
-import ContactsItem from 'components/ContactsItem';
+import ContactsItem from '../../components/ContactsItem';
 
 function ContactList() {
   const { data: contacts, isLoading: loadingList } =

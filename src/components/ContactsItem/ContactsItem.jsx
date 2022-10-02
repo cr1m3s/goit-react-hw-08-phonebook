@@ -2,7 +2,7 @@ import style from './ContactsItem.module.css';
 import PropTypes from 'prop-types';
 
 import { contactsSlice } from 'redux/contacts';
-import { LoaderMini } from 'components/Loader/Loader';
+import { LoaderMini } from '../../components/Loader/Loader';
 
 function ContactsItem({ contact }) {
   const [deleteTodo, { isLoading: isDeleting }] =

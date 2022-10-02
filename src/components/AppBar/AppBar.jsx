@@ -1,5 +1,5 @@
-import Navigation from './components/Navigation';
-import NavAuth from './components/NavAuth';
+import Navigation from '../../components/Navigation';
+import NavAuth from '../../components/NavAuth';
 import { useSelector } from 'react-redux';
 import authSelectors from 'redux/auth/authSelectors';
 import style from './AppBar.module.css';

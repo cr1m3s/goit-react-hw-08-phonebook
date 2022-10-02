@@ -10,16 +10,16 @@ import PrivateRoute from './Routes/PrivateRoute';
 import PublicRoute from './Routes/PublicRoute';
 
 const LoginView = lazy(() =>
-  import('pages/LoginView/LoginView' /* webpackChunkName: "login-view" */)
+  import('../pages/LoginView/LoginView' /* webpackChunkName: "login-view" */)
 );
 const RegisterView = lazy(() =>
   import(
-    'pages/RegisterView/RegisterView' /* webpackChunkName: "register-view" */
+    '../pages/RegisterView/RegisterView' /* webpackChunkName: "register-view" */
   )
 );
 const ContactsView = lazy(() =>
   import(
-    'pages/ContactsView/ContactsView' /* webpackChunkName: "contacts-view" */
+    '../pages/ContactsView/ContactsView' /* webpackChunkName: "contacts-view" */
   )
 );
 

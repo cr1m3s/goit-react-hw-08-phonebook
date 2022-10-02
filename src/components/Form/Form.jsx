@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import style from './Form.module.css';
-import { contactsSlice } from 'Redux/contacts';
-import { Loader } from 'components/Loader/Loader';
+import { contactsSlice } from 'redux/contacts';
+import { Loader } from '../../components/Loader/Loader';
 
 function Form() {
   const [createContact, { isLoading }] =
