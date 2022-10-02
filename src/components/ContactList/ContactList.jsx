@@ -1,9 +1,9 @@
-import { useSelector } from 'react-redux';
+import { useSelector } from "react-redux";
 
-import style from './ContactList.module.css';
-import { Loader } from 'components/Loader/Loader';
-import { filterSlice, contactsSlice } from 'redux/contacts';
-import ContactsItem from 'components/ContactsItem';
+import style from "./ContactList.module.css";
+import { Loader } from "../Loader/Loader";
+import { filterSlice, contactsSlice } from "../../redux/contacts";
+import ContactsItem from "../ContactsItem";
 
 function ContactList() {
   const { data: contacts, isLoading: loadingList } =
@@ -16,7 +16,7 @@ function ContactList() {
     const normalizedFilter = filterValue.toLocaleLowerCase();
     return (
       contacts &&
-      contacts.filter(contact =>
+      contacts.filter((contact) =>
         contact.name.toLocaleLowerCase().includes(normalizedFilter)
       )
     );
@@ -28,7 +28,7 @@ function ContactList() {
       {loadingList && <Loader />}
       {contacts && (
         <ol className={style.contacts}>
-          {contactsFilter.map(contact => (
+          {contactsFilter.map((contact) => (
             <ContactsItem key={contact.id} contact={contact} />
           ))}
         </ol>

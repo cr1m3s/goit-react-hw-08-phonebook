@@ -1,23 +1,23 @@
-import { useState } from 'react';
-import style from './Form.module.css';
-import { contactsSlice } from 'Redux/contacts';
-import { Loader } from 'components/Loader/Loader';
+import { useState } from "react";
+import style from "./Form.module.css";
+import { contactsSlice } from "../../redux/contacts";
+import { Loader } from "../Loader/Loader";
 
 function Form() {
   const [createContact, { isLoading }] =
     contactsSlice.useCreateContactMutation();
   const { data: contacts } = contactsSlice.useFetchContactsQuery();
-  const [name, setName] = useState('');
-  const [number, setNumber] = useState('');
+  const [name, setName] = useState("");
+  const [number, setNumber] = useState("");
 
   // берем данные value каждого input
-  const handleChange = evt => {
+  const handleChange = (evt) => {
     const { name, value } = evt.currentTarget;
     switch (name) {
-      case 'name':
+      case "name":
         setName(value);
         break;
-      case 'number':
+      case "number":
         setNumber(value);
         break;
       default:
@@ -25,11 +25,13 @@ function Form() {
     }
   };
 
-  const handleSubmit = async e => {
+  const handleSubmit = async (e) => {
     const contact = { name, number };
     e.preventDefault();
     const normalzeName = contact.name.toLocaleLowerCase();
-    if (contacts.find(item => item.name.toLocaleLowerCase() === normalzeName)) {
+    if (
+      contacts.find((item) => item.name.toLocaleLowerCase() === normalzeName)
+    ) {
       return alert(`${contact.name} is already in contacts`);
     }
     await createContact(contact);
@@ -37,8 +39,8 @@ function Form() {
   };
 
   const reset = () => {
-    setName('');
-    setNumber('');
+    setName("");
+    setNumber("");
   };
 
   return (
