@@ -1,25 +1,25 @@
-import { useState } from 'react';
-import { useDispatch } from 'react-redux';
-import operations from 'redux/auth/authOperations';
-import style from 'components/Form/Form.module.css';
+import { useState } from "react";
+import { useDispatch } from "react-redux";
+import operations from "../../redux/auth/authOperations";
+import style from "./LoginView.module.css";
 
 const LoginView = () => {
   const dispatch = useDispatch();
-  const [email, setEmail] = useState('');
+  const [email, setEmail] = useState("");
 
-  const [password, setPassword] = useState('');
+  const [password, setPassword] = useState("");
 
   // useEffect(() => {
   //   localStorage.setItem('user', JSON.stringify(email));
   // }, [email]);
 
-  const handleChange = evt => {
+  const handleChange = (evt) => {
     const { name, value } = evt.currentTarget;
     switch (name) {
-      case 'email':
+      case "email":
         setEmail(value);
         break;
-      case 'password':
+      case "password":
         setPassword(value);
         break;
       default:
@@ -27,10 +27,10 @@ const LoginView = () => {
     }
   };
 
-  const hadleSubmit = evt => {
+  const hadleSubmit = (evt) => {
     evt.preventDefault();
     dispatch(operations.logIn({ email, password }));
-    setPassword('');
+    setPassword("");
   };
   return (
     <div>

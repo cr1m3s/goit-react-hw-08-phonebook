@@ -1,24 +1,24 @@
-import { useState } from 'react';
-import { useDispatch } from 'react-redux';
-import authOperations from 'redux/auth/authOperations';
-import style from 'components/Form/Form.module.css';
+import { useState } from "react";
+import { useDispatch } from "react-redux";
+import authOperations from "../../redux/auth/authOperations";
+import style from "./Register.module.css";
 
 const RegisterView = () => {
   const dispatch = useDispatch();
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
-  const handleChange = evt => {
+  const handleChange = (evt) => {
     const { name, value } = evt.currentTarget;
     switch (name) {
-      case 'name':
+      case "name":
         setName(value);
         break;
-      case 'email':
+      case "email":
         setEmail(value);
         break;
-      case 'password':
+      case "password":
         setPassword(value);
         break;
       default:
@@ -26,10 +26,10 @@ const RegisterView = () => {
     }
   };
 
-  const handleSubmit = e => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(authOperations.register({ name, email, password }));
-    setPassword('');
+    setPassword("");
   };
 
   return (

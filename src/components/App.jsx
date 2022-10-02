@@ -1,25 +1,25 @@
-import { Navigate, Route, Routes } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
-import { useEffect, Suspense, lazy } from 'react';
-import operations from 'redux/auth/authOperations';
-import authSelectors from 'redux/auth/authSelectors';
+import { Navigate, Route, Routes } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect, Suspense, lazy } from "react";
+import operations from "../redux/auth/authOperations";
+import authSelectors from "../redux/auth/authSelectors";
 
-import AppBar from './AppBar';
-import { Loader } from './Loader/Loader';
-import PrivateRoute from './Routes/PrivateRoute';
-import PublicRoute from './Routes/PublicRoute';
+import AppBar from "./AppBar";
+import { Loader } from "./Loader/Loader";
+import PrivateRoute from "./Routes/PrivateRoute";
+import PublicRoute from "./Routes/PublicRoute";
 
 const LoginView = lazy(() =>
-  import('pages/LoginView/LoginView' /* webpackChunkName: "login-view" */)
+  import("../pages/LoginView/LoginView" /* webpackChunkName: "login-view" */)
 );
 const RegisterView = lazy(() =>
   import(
-    'pages/RegisterView/RegisterView' /* webpackChunkName: "register-view" */
+    "../pages/RegisterView/RegisterView" /* webpackChunkName: "register-view" */
   )
 );
 const ContactsView = lazy(() =>
   import(
-    'pages/ContactsView/ContactsView' /* webpackChunkName: "contacts-view" */
+    "../pages/ContactsView/ContactsView" /* webpackChunkName: "contacts-view" */
   )
 );
 
@@ -31,6 +31,7 @@ function App() {
   useEffect(() => {
     dispatch(operations.fetchCurrentUser());
   }, [dispatch]);
+
   return isFetchCurrentUser ? (
     <Loader />
   ) : (
