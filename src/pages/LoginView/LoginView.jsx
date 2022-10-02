@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import operations from 'redux/auth/authOperations';
+import operations from '../../redux/auth/authOperations';
 import style from '../../components/Form/Form.module.css';
 
 const LoginView = () => {

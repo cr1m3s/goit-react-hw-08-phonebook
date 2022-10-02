@@ -1,8 +1,8 @@
 import { Navigate, Route, Routes } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect, Suspense, lazy } from 'react';
-import operations from 'redux/auth/authOperations';
-import authSelectors from 'redux/auth/authSelectors';
+import operations from '../redux/auth/authOperations';
+import authSelectors from '../redux/auth/authSelectors';
 
 import AppBar from './AppBar';
 import { Loader } from './Loader/Loader';

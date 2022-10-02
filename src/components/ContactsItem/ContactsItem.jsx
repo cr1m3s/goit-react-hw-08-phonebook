@@ -1,7 +1,7 @@
 import style from './ContactsItem.module.css';
 import PropTypes from 'prop-types';
 
-import { contactsSlice } from 'redux/contacts';
+import { contactsSlice } from '../../redux/contacts';
 import { LoaderMini } from '../../components/Loader/Loader';
 
 function ContactsItem({ contact }) {
